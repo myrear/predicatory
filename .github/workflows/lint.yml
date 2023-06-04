@@ -9,9 +9,9 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
-          node-version: 14.x
-          cache: 'yarn'
-      - name: Install Dependency
+          node-version: lts/*
+          cache: yarn
+      - name: Install Dependencies
         run: yarn --frozen-lockfile
       - run: yarn lint
       - run: yarn format
