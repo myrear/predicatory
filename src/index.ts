@@ -1,12 +1,14 @@
-const excludeSymbol = Symbol()
+const neverSymbol = Symbol()
 
 const factory =
   <I, O extends I>(
-    extract: (value: I) => O | typeof excludeSymbol
+    extract: (value: I) => O | typeof neverSymbol
   ): ((value: I) => value is O) =>
-  (value: I): value is O =>
-    extract(value) !== excludeSymbol
+  (value: I): value is O => {
+    const ret = extract(value)
+    return ret === value && ret !== neverSymbol
+  }
 
 export const guard = Object.assign(factory, {
-  exclude: excludeSymbol,
+  NEVER: neverSymbol,
 } as const)

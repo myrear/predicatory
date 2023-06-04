@@ -21,7 +21,7 @@ import { guard } from 'predicatory'
 
 // this inferred `(value: unknown) => value is string`
 export const isString = guard((value) =>
-  typeof value === 'string' ? value : guard.exclude
+  typeof value === 'string' ? value : guard.NEVER
 )
 ```
 
