@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/myrear/predicatory/compare/v2.0.0...v2.0.1) (2023-07-06)
+
+
+### Bug Fixes
+
+* use `Object.is` ([704ff60](https://github.com/myrear/predicatory/commit/704ff60c93e0dc05ba61d8cd08f9ffc6e21e6b17))
+
 # [2.0.0](https://github.com/myrear/predicatory/compare/v1.0.0...v2.0.0) (2023-06-04)
 
 
