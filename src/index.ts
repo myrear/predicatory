@@ -6,7 +6,7 @@ const factory =
   ): ((value: I) => value is O) =>
   (value: I): value is O => {
     const ret = extract(value)
-    return ret === value && ret !== neverSymbol
+    return Object.is(ret, value) && ret !== neverSymbol
   }
 
 export const guard = Object.assign(factory, {
