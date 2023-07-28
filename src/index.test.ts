@@ -1,8 +1,8 @@
 import { guard } from './index'
 
 test('make user defined type guard', () => {
-  const isString = guard((value) =>
-    typeof value === 'string' ? value : guard.NEVER
+  const isString = guard((never, value) =>
+    typeof value === 'string' ? value : never
   )
   expect(isString('aaa')).toBe(true)
   expect(isString(1)).toBe(false)
@@ -18,7 +18,7 @@ test('use with `Array.filter()`', () => {
   const array = [1, 'aaa', true, { b: 2 }, 'ccc']
   expect(
     array.filter(
-      guard((value) => (typeof value === 'string' ? value : guard.NEVER))
+      guard((never, value) => (typeof value === 'string' ? value : never))
     )
   ).toEqual(['aaa', 'ccc'])
 })
