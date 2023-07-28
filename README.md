@@ -20,8 +20,8 @@ $ yarn add predicatory
 import { guard } from 'predicatory'
 
 // this inferred `(value: unknown) => value is string`
-export const isString = guard((value) =>
-  typeof value === 'string' ? value : guard.NEVER
+export const isString = guard((never, value) =>
+  typeof value === 'string' ? value : never
 )
 ```
 
