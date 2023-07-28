@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/myrear/predicatory/compare/v2.0.1...v2.1.0) (2023-07-28)
+
+
+### Features
+
+* change `guard` function signature ([b0e491b](https://github.com/myrear/predicatory/commit/b0e491b40250d6120e8be910b6e50fb16e39f9d4))
+
 ## [2.0.1](https://github.com/myrear/predicatory/compare/v2.0.0...v2.0.1) (2023-07-06)
 
 
