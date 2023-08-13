@@ -1,6 +1,6 @@
 {
   "name": "predicatory",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Zero dependency type-safe user defined type guard factory.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

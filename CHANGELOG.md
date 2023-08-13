@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/myrear/predicatory/compare/v2.1.0...v2.1.1) (2023-08-13)
+
+
+### Bug Fixes
+
+* exchange arguments order ([37bebf2](https://github.com/myrear/predicatory/commit/37bebf287d2362470a96543394d98bae24ae2046))
+
 # [2.1.0](https://github.com/myrear/predicatory/compare/v2.0.1...v2.1.0) (2023-07-28)
 
 
