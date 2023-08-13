@@ -1,12 +1,18 @@
 import { guard } from './index'
 
 test('make user defined type guard', () => {
-  const isString = guard((never, value) =>
-    typeof value === 'string' ? value : never
+  const isString = guard((value, never) =>
+    typeof value === 'string' ? value : never,
   )
   expect(isString('aaa')).toBe(true)
   expect(isString(1)).toBe(false)
   expect(isString({})).toBe(false)
+})
+
+test('example of `number` type guard', () => {
+  const isNumber = guard(Number)
+  expect(isNumber(1)).toBeTruthy()
+  expect(isNumber('')).toBeFalsy()
 })
 
 test('different output returns false', () => {
@@ -14,11 +20,7 @@ test('different output returns false', () => {
   expect(fn({ a: 1 })).toBe(false)
 })
 
-test('use with `Array.filter()`', () => {
+test('usage with `Array.filter()`', () => {
   const array = [1, 'aaa', true, { b: 2 }, 'ccc']
-  expect(
-    array.filter(
-      guard((never, value) => (typeof value === 'string' ? value : never))
-    )
-  ).toEqual(['aaa', 'ccc'])
+  expect(array.filter(guard(String))).toEqual(['aaa', 'ccc'])
 })
